@@ -1,6 +1,6 @@
 # Sistema de Ventas
 class Usuario:
-  # Metodo inicializador , self es un metodo que se python asigna refiriendose a la clase actual.
+
   def __init__(self, nombre, edad):
     self.nombre = nombre
     self.edad = edad
@@ -13,23 +13,30 @@ class Usuario:
     return f'La usuario se llama {self.nombre} y su edad es de {self.edad} años'
 
 
-# HERENCIA : Tomar metodos y atributos de una superclase y que tambien pueda ser usados por otras clases
-persona = Usuario('Jeferson', 35)
-persona.registrar()
-
 class Cliente(Usuario):
-  # pass se usa cuando no vamos a hacer nada o ejecutar algo
-  pass
+  def __init__(self, nombre,edad,numero_compras):
+    # self.nombre = nombre
+    # self.edad=edad
+    # Usuario.__init__(self,nombre,edad)
+    super().__init__(nombre,edad)
+    self.numero_compras = numero_compras
 
-# Instanciamos Cliente y usamos sus metodos heredados de Usuario
+  def ver_compras(self):
+    print(f'El numero de compras del cliente {self.nombre} es {self.numero_compras}')
+    
+cliente = Cliente('Jose',30,100)
+cliente.ver_compras()
 
-cliente = Cliente('Antonio',60)
-cliente.registrar()
 
 class Vendedor(Usuario):
-  pass
+  def __init__(self, nombre, edad, numero_ventas):
+    super().__init__(nombre, edad)
+    self.numero_ventas = numero_ventas
 
-vendedor=Vendedor('Pepe',46)
-vendedor.registrar()
+  def ver_ventas(self):
+    print(f'El numero de ventas del vendedor {self.nombre} es {self.numero_ventas}')
+
+vendedor=Vendedor('Pepe',46,250)
+vendedor.ver_ventas()
 
 # Asi podemos crear varias clases que vendrian a ser las subclases
