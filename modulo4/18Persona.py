@@ -60,14 +60,6 @@ vendedor = Vendedor('Pablo',45,'Marketing',200)
 # Asi podemos crear varias clases que vendrian a ser las subclases
 
 
-# usuario.consultar_tipo()
-# cliente.consultar_tipo()
-# vendedor.consultar_tipo()
-
-# Aqui creamos un metodo que me sirve para ejecutar un mismo metodo consultar_tipo() con sus diferencias usadas por Polimorfismo
-def mostrar_tipo(objeto):
-  objeto.consultar_tipo()
-  
-  
-mostrar_tipo(usuario)
-mostrar_tipo(vendedor)
+# Aqui estamos creando un for y recorremos cada uno d elos objetos en una lista de objetos y las mostramos  
+for objeto in (usuario, cliente, vendedor):
+    objeto.consultar_tipo()
