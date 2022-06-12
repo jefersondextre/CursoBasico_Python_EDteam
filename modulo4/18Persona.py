@@ -12,13 +12,18 @@ class Usuario:
   def __str__(self):
     return f'La usuario se llama {self.nombre} y su edad es de {self.edad} años'
 
+  # POLIMORFISMO
+  def consultar_tipo(self):
+    print('Sin especificar')
+
+#-----------------------------------------------------
 class Empleado:
   def __init__(self,area_trabajo):
     self.area_trabajo = area_trabajo
   
   def generar_reporte(self):
     print(f'Generando reporte del empleado del area de {self.area_trabajo}')
-  
+  # --------------------------------------------------
 class Cliente(Usuario):
   def __init__(self, nombre,edad,numero_compras):
     # self.nombre = nombre
@@ -30,10 +35,10 @@ class Cliente(Usuario):
   def ver_compras(self):
     print(f'El numero de compras del cliente {self.nombre} es {self.numero_compras}')
     
-# cliente = Cliente('Jose',30,100)
-# cliente.ver_compras()
-
-
+  def consultar_tipo(self):
+    print('El tipo de Usuario es Cliente..')
+    
+  # --------------------------------------------------
 class Vendedor(Usuario, Empleado):
   def __init__(self, nombre, edad,area_trabajo, numero_ventas):
     # super().__init__(nombre, edad)
@@ -43,8 +48,26 @@ class Vendedor(Usuario, Empleado):
 
   def ver_ventas(self):
     print(f'El numero de ventas del vendedor {self.nombre} es {self.numero_ventas}')
+  
+  def consultar_tipo(self):
+    print('El tipo de usuario es Vendedor : ')
 
-vendedor=Vendedor('Pepe',46,'Ventas',250)
-vendedor.generar_reporte()
 
+
+usuario = Usuario('Jorge',24)
+cliente = Cliente('Jeferson',35,12)
+vendedor = Vendedor('Pablo',45,'Marketing',200)
 # Asi podemos crear varias clases que vendrian a ser las subclases
+
+
+# usuario.consultar_tipo()
+# cliente.consultar_tipo()
+# vendedor.consultar_tipo()
+
+# Aqui creamos un metodo que me sirve para ejecutar un mismo metodo consultar_tipo() con sus diferencias usadas por Polimorfismo
+def mostrar_tipo(objeto):
+  objeto.consultar_tipo()
+  
+  
+mostrar_tipo(usuario)
+mostrar_tipo(vendedor)
