@@ -12,7 +12,13 @@ class Usuario:
   def __str__(self):
     return f'La usuario se llama {self.nombre} y su edad es de {self.edad} años'
 
-
+class Empleado:
+  def __init__(self,area_trabajo):
+    self.area_trabajo = area_trabajo
+  
+  def generar_reporte(self):
+    print(f'Generando reporte del empleado del area de {self.area_trabajo}')
+  
 class Cliente(Usuario):
   def __init__(self, nombre,edad,numero_compras):
     # self.nombre = nombre
@@ -24,19 +30,21 @@ class Cliente(Usuario):
   def ver_compras(self):
     print(f'El numero de compras del cliente {self.nombre} es {self.numero_compras}')
     
-cliente = Cliente('Jose',30,100)
-cliente.ver_compras()
+# cliente = Cliente('Jose',30,100)
+# cliente.ver_compras()
 
 
-class Vendedor(Usuario):
-  def __init__(self, nombre, edad, numero_ventas):
-    super().__init__(nombre, edad)
+class Vendedor(Usuario, Empleado):
+  def __init__(self, nombre, edad,area_trabajo, numero_ventas):
+    # super().__init__(nombre, edad)
+    Usuario.__init__(self, nombre, edad)
+    Empleado.__init__(self, area_trabajo)
     self.numero_ventas = numero_ventas
 
   def ver_ventas(self):
     print(f'El numero de ventas del vendedor {self.nombre} es {self.numero_ventas}')
 
-vendedor=Vendedor('Pepe',46,250)
-vendedor.ver_ventas()
+vendedor=Vendedor('Pepe',46,'Ventas',250)
+vendedor.generar_reporte()
 
 # Asi podemos crear varias clases que vendrian a ser las subclases
