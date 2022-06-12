@@ -13,7 +13,23 @@ class Usuario:
     return f'La usuario se llama {self.nombre} y su edad es de {self.edad} años'
 
 
-# INSTANCIACION DE OBJETOS
+# HERENCIA : Tomar metodos y atributos de una superclase y que tambien pueda ser usados por otras clases
 persona = Usuario('Jeferson', 35)
-
 persona.registrar()
+
+class Cliente(Usuario):
+  # pass se usa cuando no vamos a hacer nada o ejecutar algo
+  pass
+
+# Instanciamos Cliente y usamos sus metodos heredados de Usuario
+
+cliente = Cliente('Antonio',60)
+cliente.registrar()
+
+class Vendedor(Usuario):
+  pass
+
+vendedor=Vendedor('Pepe',46)
+vendedor.registrar()
+
+# Asi podemos crear varias clases que vendrian a ser las subclases
