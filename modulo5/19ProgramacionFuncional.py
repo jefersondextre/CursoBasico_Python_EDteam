@@ -1,13 +1,13 @@
 # Funciones LAMBDA o ANONIMAS
 # Funcion normal
-def duplicar(num):
-  return num*2
+def suma(num1,num2):
+  return num1+num2
 
-duplicado= duplicar(2)
-print(duplicado)
+valor_sumado= suma(2,4)
+print(valor_sumado)
 
 
 
 # Funcion Lambda
-duplicado=lambda num: num*2
-print(duplicado(3))
+valor_sumado=lambda num1,num2: num1 + num2
+print(valor_sumado(3,5))
