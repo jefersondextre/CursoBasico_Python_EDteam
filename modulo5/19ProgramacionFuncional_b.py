@@ -1,11 +1,34 @@
-def mostrar_mensaje(mensaje):
-  return f'Su mensaje es {mensaje}'
-
-mensaje_mostrado = mostrar_mensaje('Hola')
-print(mensaje_mostrado)
 
 
+# ! Funcion normal
+# ! ===============
+def duplicar(num):
+  num=num *2
+  return num
 
-# Funcion Lambda
-mensaje_mostrado =lambda mensaje: f'Su mensaje es {mensaje}'
-print(mensaje_mostrado('Bienvenido'))
+duplicado= duplicar(2)
+print(duplicado)
+
+#! FUNCION lambda
+#! ==============
+duplicado2=lambda num: num*2
+print(duplicado2(3))
+
+
+
+#! FUNCION NORMAL
+#! ===============
+
+def suma(num1,num2):
+  return num1+num2
+
+valor_sumado= suma(2,4)
+print(valor_sumado)
+
+
+
+#! FUNCION LAMBDA
+#! ===============
+
+valor_sumado=lambda num1,num2: num1 + num2
+print(valor_sumado(3,5))
