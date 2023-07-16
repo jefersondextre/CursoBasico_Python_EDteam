@@ -11,7 +11,6 @@ print(type(numero_5))
 # Numericos
 # - Enteros -> class int
 # ------------------------
-
 numero = 5
 print(type(numero))
 numero = -5
@@ -49,4 +48,4 @@ print(resta)
 
 operador= 2.3-0.3
 print(operador)
-# ------------------------
+# ------------------------ 

@@ -50,3 +50,8 @@ print('se repite ', lista_combinada.count(True), ' veces')
 
 # Bucar la posicion del elemento
 print(lista_combinada.index(12.3))
+
+
+
+
+ 
