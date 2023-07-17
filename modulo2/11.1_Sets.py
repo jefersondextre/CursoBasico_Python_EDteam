@@ -2,7 +2,7 @@
 # - no sabemos en que orden seran devueltas
 # - no nos mostrará información repetida (valores unicos)
 names = {"Alejo","Ada","Luis Angel","Rigoberto","Alejo",True,300,1,0,False}
-print(names)
+print(names) 
 
 frutas = set(("manzana","pera","melopcoton"))
 
