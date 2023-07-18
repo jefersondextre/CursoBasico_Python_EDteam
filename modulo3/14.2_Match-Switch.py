@@ -4,7 +4,7 @@ y con base a ello realizar una acción.
 Evalua un valor y escoge de ciertos casos
 
 '''
-status = "solido otro"
+status = "solido"
 match status:
     case "solido" | "liquido" | "gaseoso":
         print("El estados es solido o liquido o gaseoso")
