@@ -17,7 +17,7 @@ print(lista_estudiantes[1:])
 
 lista_combinada = ['hola', 0, 12.3, True, 'Bienvenido', True]
 print(lista_combinada)
-
+ 
 nuevaLista = [[1, 2, 3], [4, 5, 6], [7, 8, 9], lista_combinada]
 print(nuevaLista[1][1])
 print(nuevaLista)
